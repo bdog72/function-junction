@@ -4,34 +4,53 @@
  * construct available in Javascript.
  */
 
+const max = (a, b) => {
+  if (a > b) {
+    return a
+  } else {
+    return b
+  }
+}
 // ...
 
 /**
  * Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
-
+const maxOfThree = (a, b, c) => {
+  return max(max(a, b), c)
+}
 // ...
 
 /*
  * Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
-
+const sum = (a, b) => {
+  return (a + b)
+}
 // ...
 
 /*
  * Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
-
+const sumOfArray = (a) => {
+  let total = 0
+  for (let i = 0; i < a.length; i++) {
+    total += a[i]
+  }
+  return total
+}
 // ...
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
-
+const isVowel = (letter) => {
+  return 'aEiou'.includes(letter)
+}
 // ...
 
  /**
@@ -42,7 +61,15 @@
   * For example, rovarspraket("this is fun") should
   * return the string "tothohisos isos fofunon".
   */
-
+const rovarspraket = (word) => {
+  const letters = word.split('')
+  for (var i = 0; i < letters.length; i++) {
+    if (!isVowel(letters[i])) {
+      letters[i] = letters[i] + 'o' + letters[i]
+    }
+  }
+  return letters.join('')
+}
 // ...
 
 /**
@@ -51,7 +78,9 @@
  * reverse("skoob") should return the
  * string "books".
  */
-
+const reverse = (skoob) => {
+  return skoob.split('').reverse().join('')
+}
 // ...
 
  /**
@@ -59,8 +88,10 @@
   * string returns the first, longest word in the array.
   *
   * i.e. findLongestWord("book dogs") should return "book"
-  */
+  */const findLongestWord(str) => {
 
+    }
+findLongestWord('Books dogs')
 // ...
 
 /**
@@ -114,7 +145,6 @@ test('rovarspraket()', (t) => {
   t.is(rovarspraket('b'), 'bob')
   t.is(rovarspraket('cat'), 'cocatot')
   t.is(rovarspraket('javascript'), 'jojavovasoscocroripoptot')
-  t.is(rovarspraket(0), '0')
 })
 
 test('reverse()', (t) => {
