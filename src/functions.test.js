@@ -81,17 +81,25 @@ const rovarspraket = (word) => {
 const reverse = (skoob) => {
   return skoob.split('').reverse().join('')
 }
-// ...
+// ...  git push -u origin master
 
  /**
   * Write a function findLongestWord() that takes an
   * string returns the first, longest word in the array.
   *
   * i.e. findLongestWord("book dogs") should return "book"
-  */const findLongestWord(str) => {
-
+*/const fLW = (str) => {
+  const fLW1 = str.split(' ')
+  const fLW2 = ''
+  for (var i = 0; i < fLW1.length; i++) {
+    if (fLW2.length < fLW1[i].length) {
+      fLW2 = fLW1[i]
     }
-findLongestWord('Books dogs')
+  }
+  str = fLW2
+  return str.length
+}
+(fLW('books dogs'), 'dogs')
 // ...
 
 /**
