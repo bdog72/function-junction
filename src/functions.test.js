@@ -83,12 +83,25 @@ const reverse = (skoob) => {
 }
 // ...  git push -u origin master
 
- /**
+
   * Write a function findLongestWord() that takes an
   * string returns the first, longest word in the array.
   *
   * i.e. findLongestWord("book dogs") should return "book"
 
+
+  const findLongestWord = (string) => {
+    const splitWord = string.split(' ')
+    let longestWord = 0
+    let word = null
+    for (var i = 0; i < splitWord.length; i++) {
+      if (longestWord < splitWord[i].length) {
+        longestWord = splitWord[i].length
+        word = splitWord[i]
+      }
+    }
+    return word
+  }
 // ...
 
 /**
